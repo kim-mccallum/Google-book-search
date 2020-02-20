@@ -13,7 +13,7 @@ class SearchScreen extends Component {
     };
   }
 
-  setShowAddForm(response) {
+  setBookResultsList(response) {
     this.setState({
         bookResults: response
     });
