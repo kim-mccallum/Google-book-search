@@ -11,7 +11,7 @@ class BookItem extends Component {
         return (
             <div className="BookItem">
                 <h1 className="BookTitle">{this.props.title}</h1>
-                <img className="BookImage" src={this.props.image} alt="image of book"></img>
+                <img className="BookImage" src={this.props.image}></img>
                 <div className="BookDetailsContainer">
                     <p>Author: {authors}</p>
                     <p>Cost: Put this in later</p>

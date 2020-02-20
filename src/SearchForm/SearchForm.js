@@ -10,8 +10,26 @@ class SearchForm extends Component {
         // Return/render a form with event handlers to pass data back to SearchScreen
         return (
             <div className="SearchForm">
-                {/* form stuff in here */}
-                <h1>Planning to put a form here</h1>
+                {/* add later - onSubmit={e => this.handleSubmit(e)} */}
+                <form >
+                    <label htmlFor="Search">Search:</label>
+                    <input 
+                        type="text" 
+                        name="Search" 
+                        id="Search" 
+                        placeholder="henry"/>
+
+                    <label htmlFor="print-type">Print Type</label>
+                    <select id="print-type" name="print-type">
+                        <option value="All">Select one...</option>
+                        {/* {options} */}
+                    </select>
+                    <label htmlFor="book-type">Book Type</label>
+                    <select id="book-type" name="book-type">
+                        <option value="All">Select one...</option>
+                        {/* {options} */}
+                    </select>
+                </form>
             </div>
         );
     }
