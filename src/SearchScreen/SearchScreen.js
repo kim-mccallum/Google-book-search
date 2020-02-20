@@ -13,15 +13,16 @@ class SearchScreen extends Component {
     };
   }
 
-  setShowAddForm(show) {
+  setShowAddForm(response) {
     this.setState({
-      showAddForm: show
+        bookResults: response
     });
   }
 
   render() {
     return (
       <div className="SearchScreen">
+        <h1 className="Banner">Google Book Search</h1>
           {/* Receive data to update state - pass callback props */}
           <SearchForm />
           {/* Pass data to BookList as props */}

@@ -22,7 +22,6 @@ class BookList extends Component {
             const image = item.volumeInfo.imageLinks.smallThumbnail;
             return <BookItem title={title} authors={authors} description={description} image={image} key={idx}/>
         });
-        console.log(results);
         return (
             <div className="BookList">
                 {results}
