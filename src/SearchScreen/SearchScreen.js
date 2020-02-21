@@ -11,12 +11,15 @@ class SearchScreen extends Component {
     this.state = {
       bookResults: []
     };
+    // bind this to the function so you can use it - relate this conceptually to event dele
+    this.setBookResultsList = this.setBookResultsList.bind(this);
   }
 
   setBookResultsList(response) {
     // debugger;
+    console.log(response)
     this.setState({
-        bookResults: [...response]
+        bookResults: response
     });
   }
 

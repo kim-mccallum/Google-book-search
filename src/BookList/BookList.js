@@ -14,15 +14,16 @@ class BookList extends Component {
             // Construct a call to BookItem
             const title = item.volumeInfo.title;
             const authors = item.volumeInfo.authors;
-            //Sometimes there is no price - Deal with this later
-            // if (item.saleInfo.saleability === "NOT_FOR_SALE"){
-            //     const price = 'Not available';
-            // } else {
-            //     const price = item.saleInfo.listPrice.amount;
-            // }
+            // Deal with price issue
+            let price = 'NA'
+            // const price = item.saleInfo.listPrice.amount;
+            if (item.saleInfo.saleability==="FOR_SALE"){
+                price = item.saleInfo.listPrice.amount
+            }
             const description = item.volumeInfo.description;
+            // Add some logic because sometimes there is no thumbnail
             const image = item.volumeInfo.imageLinks.smallThumbnail;
-            return <BookItem title={title} authors={authors} description={description} image={image} key={idx}/>
+            return <BookItem title={title} authors={authors} price={price} description={description} image={image} key={idx}/>
         });
         return (
             <div className="BookList">

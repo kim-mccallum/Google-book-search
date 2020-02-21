@@ -6,7 +6,11 @@ class BookItem extends Component {
     // Simple component - Receives a single book as props and renders the info
 
     render() {
-        const authors = this.props.authors.toString(); 
+        let authors = 'NA';
+        // Problem here - Sometimes there is no author and sometimes there is no price
+        if (this.props.authors !== null && this.props.authors !== undefined){
+            authors = this.props.authors.toString(); 
+        }
 
         return (
             <div className="BookItem">
@@ -14,7 +18,8 @@ class BookItem extends Component {
                 <img className="BookImage" src={this.props.image}></img>
                 <div className="BookDetailsContainer">
                     <p>Author: {authors}</p>
-                    <p>Cost: Put this in later</p>
+                    {/* Some issues with the cost */}
+                    <p>Cost: ${this.props.price}</p>
                     <p>{this.props.description}</p>
                 </div>
             </div>
