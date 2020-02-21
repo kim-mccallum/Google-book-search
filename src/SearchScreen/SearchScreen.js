@@ -14,8 +14,9 @@ class SearchScreen extends Component {
   }
 
   setBookResultsList(response) {
+    // debugger;
     this.setState({
-        bookResults: response
+        bookResults: [...response]
     });
   }
 
@@ -23,10 +24,12 @@ class SearchScreen extends Component {
     return (
       <div className="SearchScreen">
         <h1 className="Banner">Google Book Search</h1>
-          {/* Receive data to update state - pass callback props */}
-          <SearchForm />
-          {/* Pass data to BookList as props */}
-          <BookList responseItems={this.props.responseItems}/>
+            {/* Receive data to update state - pass callback props */}
+            <SearchForm setBookResultsList={this.setBookResultsList}/>
+            {/* Pass data to BookList as props for static */}
+            {/* <BookList responseItems={this.props.responseItems}/> */}
+            {/* Pass data to BookList as props for static */}
+            <BookList responseItems={this.state.bookResults}/>
       </div>
     );
   }

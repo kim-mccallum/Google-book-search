@@ -5,8 +5,10 @@ import BookItem from '../BookItem/BookItem';
 
 class BookList extends Component {
     // Simple component - Receives the book results list as props and renders a list using the BookItem component
+ 
 
     render() {
+        console.log(this.props.responseItems);
         // Map over the list of books returned to create list of BookItem components
         const results = this.props.responseItems.map((item, idx) => {
             // Construct a call to BookItem

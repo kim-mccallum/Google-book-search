@@ -22,10 +22,11 @@ class SearchForm extends Component {
             })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
+                this.props.setBookResultsList(data.items)
             })
             .catch(err => {
-                console.log('oops!')
+                console.log(err)
             });
       }
 
@@ -41,6 +42,7 @@ class SearchForm extends Component {
                         id="Search" 
                         placeholder="henry"/>
                     <button type="submit" >Search</button>
+                    <br/>
                     <label htmlFor="printType">Print Type</label>
                     <select id="printType" name="printType">
                         <option value="printType=all">all</option>
